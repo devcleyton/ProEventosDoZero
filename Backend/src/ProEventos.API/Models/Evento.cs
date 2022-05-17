@@ -8,7 +8,6 @@ namespace ProEventos.API.Models
         public string Tema { get; set; }
         public int QuantidadeSuportada { get; set; }
         public string Lote { get; set; }
-        public string ImagemUrl { get; set; }
-
+        public string ImagemUrl { get; set;}
     }
 }
