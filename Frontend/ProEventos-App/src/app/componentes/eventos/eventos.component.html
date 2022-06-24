@@ -1,0 +1,77 @@
+<div class="container">
+  <div
+    class="container d-flex justify-content-between align-items-center mt-2 mb-1"
+  >
+    <app-titulo [titulo]="'Evento'">Titulo</app-titulo>
+
+    <h5>
+      <span class="badge bg-success" *ngIf="eventos.length"
+        ><i class="fa-regular fa-circle-check"></i> |
+        {{ eventos.length }} eventos disponíveis </span
+      ><i class="fa-regular fa-badge-check"></i>
+      <span class="badge bg-danger" *ngIf="!eventos.length"
+        ><i class="fa-solid fa-ban"></i> | Eventos indisponíveis</span
+      >
+    </h5>
+  </div>
+  <div class="form-inline">
+    <div class="input-group mb-3">
+      <label for="" class="mr-2"></label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Busque por um evento ou cidade..."
+        [(ngModel)]="filtrolista"
+      />
+      <!-- <button class="btn btn-outline-success" type="button" id="button-addon2">
+      Buscar
+    </button> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let evento of eventosfiltrados">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ evento.tema.substring(0, 25) }}...</h5>
+          <p class="card-text">Local: {{ evento.local }}</p>
+          <p class="card-text">Data: {{ evento.dataEvento | DateFormat }}</p>
+          <p class="card-text">Lote: {{ evento.lotes[0].nome }}</p>
+          <button type="button" class="btn btn-warning btn-sm me-2">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger btn-sm me-2"
+            tooltip="{{ evento.id }}"
+            (click)="openModal(template)"
+          >
+            <i class="fa-solid fa-trash"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-success btn-sm"
+            (click)="showSuccess()"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container-sm">
+      <ng-template #template>
+        <div class="modal-body text-center">
+          <p>Deseja que este item seja deletado?</p>
+          <button type="button" class="btn btn-danger me-2" (click)="confirm()">
+            Sim
+          </button>
+          <button type="button" class="btn btn-default" (click)="decline()">
+            Não
+          </button>
+        </div>
+      </ng-template>
+      <h4 *ngIf="!eventos.length" class="text-center">
+        Nenhum evento disponível no momento!
+      </h4>
+    </div>
+  </div>
+</div>

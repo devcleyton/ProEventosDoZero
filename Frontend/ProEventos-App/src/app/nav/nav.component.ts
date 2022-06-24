@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  isCollapsed = true;
+  auth = true;
+
   constructor() {}
 
   ngOnInit(): void {}
