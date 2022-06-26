@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Evento } from 'src/app/models/Evento';
 import { EventoService } from 'src/app/services/evento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-eventos',
@@ -44,7 +45,8 @@ export class EventosComponent implements OnInit {
     private eventoService: EventoService,
     private modalService: BsModalService,
     private toastr: ToastrService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -107,5 +109,17 @@ export class EventosComponent implements OnInit {
       progressBar: true,
       positionClass: 'toast-bottom-right',
     });
+  }
+
+  editEvento(id: number): void {
+    this.router.navigate([`detalhe/edit/${id}`]);
+  }
+
+  detalheEvento(id: string): void {
+    this.router.navigate([`detalhe/${id}`]);
+  }
+
+  novoEvento(): void {
+    this.router.navigate([`novo`]);
   }
 }

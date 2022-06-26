@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="eventos">Meus Eventos</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <div class="container-fluid" *ngIf="showMenu()">
+    <a class="navbar-brand" routerLink="eventos">
+      <i class="fa-solid fa-diagram-project"></i
+    ></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,7 +15,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div
-      class="collapse navbar-collapse d-flex justify-content-between"
+      class="collapse navbar-collapse justify-content-between"
       id="navbarSupportedContent"
     >
       <ul class="navbar-nav mb-2 mb-lg-0">
@@ -21,18 +23,24 @@
           <a class="nav-link" routerLink="eventos"><strong>Eventos</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="palestrantes"><strong>Palestrantes</strong></a>
+          <a class="nav-link" routerLink="palestrantes"
+            ><strong>Palestrantes</strong></a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="dashboard"><strong>Dashboard</strong></a>
+          <a class="nav-link" routerLink="dashboard"
+            ><strong>Dashboard</strong></a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="contato"><strong>Contato</strong></a>
         </li>
       </ul>
       <ul class="navbar-nav" *ngIf="auth">
-        <li class="nav-item"><a class="nav-link" routerLink="perfil">Perfil</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="#">Sair</a></li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="perfil">Perfil</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" routerLink="login">Sair</a></li>
       </ul>
       <ul class="navbar-nav" *ngIf="!auth">
         <li class="nav-item"><a class="nav-link" routerLink="#">Entrar</a></li>

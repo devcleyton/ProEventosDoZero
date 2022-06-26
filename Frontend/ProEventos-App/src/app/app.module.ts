@@ -17,17 +17,26 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SlidesComponent } from './slides/slides.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { EventosComponent } from './componentes/eventos/eventos.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { ContatosComponent } from './componentes/contatos/contatos.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
+import { EventoDetalheComponent } from './componentes/eventos/evento-detalhe/evento-detalhe.component';
+import { EventoEditarComponent } from './componentes/eventos/evento-editar/evento-editar.component';
+import { EventoNovoComponent } from './componentes/eventos/evento-novo/evento-novo.component';
+import { UserComponent } from './componentes/user/user.component';
+import { RegistrationComponent } from './componentes/user/registration/registration.component';
+import { LoginComponent } from './componentes/user/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
+    EventoDetalheComponent,
+    EventoEditarComponent,
+    EventoNovoComponent,
     PalestrantesComponent,
     PerfilComponent,
     DashboardComponent,
@@ -36,6 +45,9 @@ import { TituloComponent } from './shared/titulo/titulo.component';
     TituloComponent,
     DateFormatPipe,
     SlidesComponent,
+    LoginComponent,
+    UserComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,10 +60,10 @@ import { TituloComponent } from './shared/titulo/titulo.component';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
-    NgxSpinnerModule
+    NgxSpinnerModule,
   ],
   providers: [EventoService],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

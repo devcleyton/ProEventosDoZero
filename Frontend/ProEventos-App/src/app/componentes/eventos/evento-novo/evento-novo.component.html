@@ -1,0 +1,66 @@
+<div class="container">
+  <div
+    class="d-flex flex-row card p-3 mt-3 mb-3 align-items-center justify-content-between shadow-sm"
+  >
+    <app-titulo [titulo]="'Novo evento'"></app-titulo>
+  </div>
+
+  <!-- inicio do form -->
+  <form class="row g-3">
+    <div class="col-md-12">
+      <label for="inputEmail4" class="form-label">Tema</label>
+      <input type="text" class="form-control" id="inputEmail4" />
+    </div>
+    <div class="col-6">
+      <label for="inputAddress" class="form-label">Local</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Planaltina-DF"
+      />
+    </div>
+    <div class="col-6">
+      <label for="inputAddress2" class="form-label">Data/Hora</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder=""
+      />
+    </div>
+    <div class="col-3">
+      <label for="inputAddress2" class="form-label"
+        >Quantidade de pessoas</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="Ex: 120"
+      />
+    </div>
+    <div class="col-3">
+      <label for="inputAddress2" class="form-label">Telefone</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="(61) 99631-4510"
+      />
+    </div>
+    <div class="col-6">
+      <label for="inputAddress2" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="example@example.com.br"
+      />
+    </div>
+    <div class="col-12">
+      <button type="button" class="btn btn-primary me-3">Criar evento</button>
+      <button type="button" class="btn btn-danger" routerLink="/eventos">Cancelar</button>
+    </div>
+  </form>
+</div>
